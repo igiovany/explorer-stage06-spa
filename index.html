@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SPA</title>
+
+  <script src="./js/index.js" type="module" defer></script>
 </head>
 
 <body>
@@ -15,31 +17,8 @@
     <a href="/404" onclick="route()">404</a>
   </nav>
 
-  <div class="app"></div>
+  <div id="app"></div>
 
-  <script>
-
-    const routes ={
-      "/": "pages/home.html",
-      "/about": "pages/about.html",
-      "/contact": "pages/contact.html",
-      404: "pages/404.html",
-
-    }
-    
-    function route(event) {
-      event = event || window.event
-      event.preventDefault()
-
-      window.history.pushState({}, "", event.target.href)
-
-      handle()
-    }
-
-    function handle() {
-      const { pathname } = window.location
-    }
-  </script>
 </body>
 
 </html>
